@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestNG Group Test]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Main test class(failed)">
+    <classes>
+      <class name="com.demo.testcases.web.WebAppointmentPrescriptionPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verify_created_drug_is_added"/>
+          <include name="prescription_tab"/>
+          <include name="webSetup"/>
+          <include name="verify_20_popular_drugs"/>
+          <include name="verify_same_drug_cannot_be_added_twice"/>
+        </methods>
+      </class> <!-- com.demo.testcases.web.WebAppointmentPrescriptionPageTest -->
+    </classes>
+  </test> <!-- Main test class(failed) -->
+</suite> <!-- Failed suite [TestNG Group Test] -->

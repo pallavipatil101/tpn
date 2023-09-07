@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG Group Test">
+    <test name="Group web" preserve-order="true">
+        <groups>
+            <run>
+              <include name = "web"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.demo.testcases.web.WebLoginTest"/>
+            <class name="com.demo.testcases.web.WebAppointmentCFDTest"/>
+    		<class name="com.demo.testcases.web.WebAppointmentPrescriptionPageTest"/>
+    		<class name="com.demo.testcases.web.WebAppointmentInstructionsPageTest"/>
+
+        </classes>
+    </test>
+     <test name="Main test class" preserve-order="true">
+        <classes>
+      <class name="com.demo.testcases.web.WebAppointmentSummaryPageTest"/>
+        </classes>
+    </test>
+</suite>

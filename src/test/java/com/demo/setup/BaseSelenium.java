@@ -1,8 +1,5 @@
 package com.demo.setup;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeClass;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,10 +8,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -22,12 +19,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.asserts.SoftAssert;
+
+import com.demo.utilities.ExcelReader;
 
 import io.appium.java_client.AppiumDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseSelenium {
 	public static WebDriver driver;
@@ -36,15 +35,18 @@ public class BaseSelenium {
 	public static AppiumDriver appiumDriver;
 	public static DesiredCapabilities caps;
 	public static URL url;
-
+	public static SoftAssert softAssert= new SoftAssert();
+	public static ExcelReader excel = new ExcelReader(System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdatatemp.xlsx");
 	public BaseSelenium() {
+		//PropertyConfigurator.configure(System.getProperty("user.dir") + "/src/main/resources/log4j.properties");
+
 		String filepath = System.getProperty("user.dir") + "/src/test/java/com/demo/properties/demo.properties";
 		properties = new Properties();
 		FileInputStream fis = null;
 		try {
 			fis = new FileInputStream(filepath);
 			properties.load(fis);
-			logger.info("Property file loaded successfully");
+			//logger.info("Property file loaded successfully");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -104,8 +106,14 @@ public class BaseSelenium {
 	      }
 	      return prop;
 	   }
+	
+	@BeforeSuite(groups="web")
+	public void webSetup() {
+		BaseSelenium base = new BaseSelenium();
+		base.localWebRunMode();
+	}
 
-	@BeforeTest
+	//@BeforeTest
 	public void setup() throws MalformedURLException {
 		BaseSelenium base = new BaseSelenium();
 		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -141,22 +149,26 @@ public class BaseSelenium {
 		logger.info("Browser name type =" + " " + browser_name);
 
 		if (browser_name.equals("chrome")) {
-			System.out.println("Test");
-			String cromedriverPath = System.getProperty("user.dir") + "/driver/chromedriver";
-			System.setProperty("webdriver.chrome.driver", cromedriverPath);
+//			String cromedriverPath = System.getProperty("user.dir") + "/driver/chromedriver";
+//			System.setProperty("webdriver.chrome.driver", cromedriverPath);
+			 WebDriverManager.chromedriver().setup();
 			ChromeOptions chrome_options = new ChromeOptions();
 			chrome_options.addArguments("--incognito");
 			driver = new ChromeDriver(chrome_options);
-//			driver.manage().deleteAllCookies();
+			driver.manage().deleteAllCookies();
 			logger.info("Chrome driver executed successfully");
-		} else if (browser_name.equals("firefox")) {
+		} 
+		
+		else if (browser_name.equals("firefox")) {
 			String geckodriverPath = System.getProperty("user.dir") + "/drivergeckodriver.exe";
 			System.setProperty("webdriver.gecko.driver", geckodriverPath);
 			driver = new FirefoxDriver();
 
 			logger.info("Fire fox browseer executed successfully");
 
-		} else {
+		} 
+		
+		else {
 			throw new IllegalArgumentException("Invalid browser type: " + browser_name);
 		}
 		
@@ -168,16 +180,13 @@ public class BaseSelenium {
 	}
 
 	
-	@AfterTest
+	@AfterSuite(groups="web")
 	public void tearDown() {
-
+		softAssert.assertAll();
 		if (driver != null) {
-			//driver.quit();
+			driver.quit();
 			logger.info("Browser instance closed successfully");
-		} else if( appiumDriver != null) {
-			appiumDriver.quit();
-			logger.info("Application instance closed successfully");
-		}
+		} 
 	}
 
 }

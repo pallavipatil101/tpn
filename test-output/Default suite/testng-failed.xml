@@ -6,7 +6,7 @@
       <class name="com.demo.testcases.web.WebLoginTest">
         <methods>
           <include name="tearDown"/>
-          <include name="setup"/>
+          <include name="webSetup"/>
           <include name="login"/>
         </methods>
       </class> <!-- com.demo.testcases.web.WebLoginTest -->

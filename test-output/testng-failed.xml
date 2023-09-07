@@ -4,34 +4,32 @@
   <listeners>
     <listener class-name="com.demo.listeners.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Test Groups(failed)">
+    <groups>
+      <run>
+        <include name="web"/>
+      </run>
+    </groups>
     <classes>
-      <class name="com.demo.testcases.web.WebAppointmentCFDTest">
+      <class name="com.demo.testcases.web.WebLoginTest">
         <methods>
           <include name="tearDown"/>
-          <include name="open_created_appointment"/>
-          <include name="setup"/>
-          <include name="verify_disabled_slot"/>
+          <include name="webSetup"/>
+          <include name="login" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.demo.testcases.web.WebAppointmentCFDTest -->
-      <class name="com.demo.testcases.web.WebAppointmentSummaryPageTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="verify_record_is_printed"/>
-          <include name="verify_dagnosis"/>
-          <include name="setup"/>
-          <include name="verify_drug"/>
-        </methods>
-      </class> <!-- com.demo.testcases.web.WebAppointmentSummaryPageTest -->
-      <class name="com.demo.testcases.web.WebAppointmentPrescriptionPageTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="setup"/>
-          <include name="verify_created_drug_is_added"/>
-          <include name="prescription_tab"/>
-          <include name="verify_same_drug_cannot_be_added_twice"/>
-        </methods>
-      </class> <!-- com.demo.testcases.web.WebAppointmentPrescriptionPageTest -->
+      </class> <!-- com.demo.testcases.web.WebLoginTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test Groups(failed) -->
+  <test thread-count="5" name="Test Classes(failed)">
+    <classes>
+      <class name="com.demo.testcases.web.WebHomePageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="select_evening_slot"/>
+          <include name="webSetup"/>
+          <include name="appointment" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.demo.testcases.web.WebHomePageTest -->
+    </classes>
+  </test> <!-- Test Classes(failed) -->
 </suite> <!-- Failed suite [Suite] -->

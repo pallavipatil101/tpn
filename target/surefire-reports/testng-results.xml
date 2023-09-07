@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="15" total="37" passed="21" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-08-25T11:04:41 IST" name="Suite" finished-at="2023-08-25T11:09:59 IST" duration-ms="317681">
+    <groups>
+      <group name="web">
+        <method signature="WebCFDPageTest.appointment(java.util.Hashtable)[pri:1, instance:com.demo.testcases.web.WebCFDPageTest@66629f63]" name="appointment" class="com.demo.testcases.web.WebCFDPageTest"/>
+        <method signature="WebHomePageTest.select_evening_slot()[pri:1, instance:com.demo.testcases.web.WebHomePageTest@2b62442c]" name="select_evening_slot" class="com.demo.testcases.web.WebHomePageTest"/>
+        <method signature="WebInstructionsPageTest.instructions_tab()[pri:1, instance:com.demo.testcases.web.WebInstructionsPageTest@27a5328c]" name="instructions_tab" class="com.demo.testcases.web.WebInstructionsPageTest"/>
+        <method signature="WebLoginTest.login(java.util.Hashtable)[pri:1, instance:com.demo.testcases.web.WebLoginTest@7c22d4f]" name="login" class="com.demo.testcases.web.WebLoginTest"/>
+        <method signature="WebPrescriptionPageTest.prescription_tab()[pri:1, instance:com.demo.testcases.web.WebPrescriptionPageTest@841e575]" name="prescription_tab" class="com.demo.testcases.web.WebPrescriptionPageTest"/>
+        <method signature="WebSummaryPageTest.summary_tab()[pri:1, instance:com.demo.testcases.web.WebSummaryPageTest@1e5f4170]" name="summary_tab" class="com.demo.testcases.web.WebSummaryPageTest"/>
+      </group> <!-- web -->
+    </groups>
+    <test started-at="2023-08-25T11:04:41 IST" name="End To End Tests" finished-at="2023-08-25T11:09:59 IST" duration-ms="317681">
+      <class name="com.demo.testcases.web.WebInstructionsPageTest">
+        <test-method signature="instructions_tab()[pri:1, instance:com.demo.testcases.web.WebInstructionsPageTest@27a5328c]" started-at="2023-08-25T11:08:25 IST" name="instructions_tab" finished-at="2023-08-25T11:08:30 IST" duration-ms="5253" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- instructions_tab -->
+        <test-method signature="test_instruction_procedure(java.util.Hashtable)[pri:2, instance:com.demo.testcases.web.WebInstructionsPageTest@27a5328c]" started-at="2023-08-25T11:08:30 IST" name="test_instruction_procedure" data-provider="dp" finished-at="2023-08-25T11:08:42 IST" duration-ms="11972" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{created_procedure=Created Procedure01, created_instruction=Created Instruction01, created_test=Created Test01, searched_instruction=Drink boiled water, searched_procedure=ARTHROSCOPIC STABILISATION PROCEDURE, searched_test=Urine Acetone}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_instruction_procedure -->
+      </class> <!-- com.demo.testcases.web.WebInstructionsPageTest -->
+      <class name="com.demo.testcases.web.WebPrescriptionPageTest">
+        <test-method signature="prescription_tab()[pri:1, instance:com.demo.testcases.web.WebPrescriptionPageTest@841e575]" started-at="2023-08-25T11:06:16 IST" name="prescription_tab" finished-at="2023-08-25T11:06:29 IST" duration-ms="12416" status="FAIL">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
+            <message>
+              <![CDATA[stale element reference: element is not attached to the page document
+  (Session info: chrome=111.0.5563.64)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '11.0.20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [644ba12522f6c6552aba541d8b842202, getElementText {id=1c3b66cc-fbe1-495f-bb40-01129fd4968a}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.64, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: /tmp/.com.google.Chrome.73xawP}, goog:chromeOptions: {debuggerAddress: localhost:34599}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:34599/devtoo..., se:cdpVersion: 111.0.5563.64, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (644ba12522f6c6552aba541d8b842202)] -> css selector: .nav.nav-tabs>li]
+Session ID: 644ba12522f6c6552aba541d8b842202]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=111.0.5563.64)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.14.0-1059-oem', java.version: '11.0.20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [644ba12522f6c6552aba541d8b842202, getElementText {id=1c3b66cc-fbe1-495f-bb40-01129fd4968a}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.64, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: /tmp/.com.google.Chrome.73xawP}, goog:chromeOptions: {debuggerAddress: localhost:34599}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:34599/devtoo..., se:cdpVersion: 111.0.5563.64, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (644ba12522f6c6552aba541d8b842202)] -> css selector: .nav.nav-tabs>li]
+Session ID: 644ba12522f6c6552aba541d8b842202
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:192)
+at com.demo.actions.web.CFDPage.open_prescription_tab(CFDPage.java:227)
+at com.demo.testcases.web.WebPrescriptionPageTest.prescription_tab(WebPrescriptionPageTest.java:21)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prescription_tab -->
+        <test-method signature="verify_20_popular_drugs()[pri:2, instance:com.demo.testcases.web.WebPrescriptionPageTest@841e575]" started-at="2023-08-25T11:06:29 IST" name="verify_20_popular_drugs" finished-at="2023-08-25T11:06:30 IST" duration-ms="1459" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_20_popular_drugs -->
+        <test-method signature="add_drugs(java.util.Hashtable)[pri:3, instance:com.demo.testcases.web.WebPrescriptionPageTest@841e575]" started-at="2023-08-25T11:06:30 IST" name="add_drugs" data-provider="dp" finished-at="2023-08-25T11:07:35 IST" duration-ms="64647" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{searched_drug=NAXDOM, popular_drug=COMBIFLAM}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- add_drugs -->
+        <test-method signature="add_new_drug(java.util.Hashtable)[pri:4, instance:com.demo.testcases.web.WebPrescriptionPageTest@841e575]" started-at="2023-08-25T11:07:35 IST" name="add_new_drug" data-provider="dp" finished-at="2023-08-25T11:08:25 IST" duration-ms="49510" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{new_drug_food_ralation=after, new_drug_night=frequency_n, new_drug_evening=frequency_e, new_drug_morning=frequency_m, new_drug_company=magical potions, new_drug_price=900, new_drug_duration=7.0, new_drug_sos=frequency_sos, new_drug_afternoon=frequency_a, new_drug_instructions=drink warm water, new_drug_name=wolfsbane, new_drug_strength=900, new_drug_duration_in=days, new_drug_formulation=tablet, new_drug_mode=oral}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- add_new_drug -->
+        <test-method signature="verify_delete_icon_for_added_drugs()[pri:5, instance:com.demo.testcases.web.WebPrescriptionPageTest@841e575]" started-at="2023-08-25T11:08:25 IST" name="verify_delete_icon_for_added_drugs" finished-at="2023-08-25T11:08:25 IST" duration-ms="44" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_delete_icon_for_added_drugs -->
+        <test-method signature="delete_all_added_drugs()[pri:6, instance:com.demo.testcases.web.WebPrescriptionPageTest@841e575]" started-at="2023-08-25T11:08:25 IST" name="delete_all_added_drugs" finished-at="2023-08-25T11:08:25 IST" duration-ms="110" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delete_all_added_drugs -->
+      </class> <!-- com.demo.testcases.web.WebPrescriptionPageTest -->
+      <class name="com.demo.testcases.web.WebLoginTest">
+        <test-method is-config="true" signature="webSetup()[pri:0, instance:com.demo.testcases.web.WebLoginTest@7c22d4f]" started-at="2023-08-25T11:04:34 IST" name="webSetup" finished-at="2023-08-25T11:04:41 IST" duration-ms="7387" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- webSetup -->
+        <test-method signature="login(java.util.Hashtable)[pri:1, instance:com.demo.testcases.web.WebLoginTest@7c22d4f]" started-at="2023-08-25T11:04:41 IST" name="login" data-provider="dp" finished-at="2023-08-25T11:04:49 IST" duration-ms="7568" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Username=josh_doctor, Password=josh123}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.demo.testcases.web.WebLoginTest@7c22d4f]" started-at="2023-08-25T11:09:59 IST" name="tearDown" finished-at="2023-08-25T11:09:59 IST" duration-ms="1" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [null] but found [Female],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [2 weeks] but found [7 days],
+expected [7 days] but found [2 weeks],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [null] but found [Female],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [2 weeks] but found [7 days],
+expected [7 days] but found [2 weeks],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at com.demo.setup.BaseSelenium.tearDown(BaseSelenium.java:183)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:404)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:324)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:74)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:123)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.demo.testcases.web.WebLoginTest -->
+      <class name="com.demo.testcases.web.WebSummaryPageTest">
+        <test-method signature="summary_tab()[pri:1, instance:com.demo.testcases.web.WebSummaryPageTest@1e5f4170]" started-at="2023-08-25T11:08:42 IST" name="summary_tab" finished-at="2023-08-25T11:09:06 IST" duration-ms="23520" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- summary_tab -->
+        <test-method signature="test_instruction_procedure(java.util.Hashtable)[pri:2, instance:com.demo.testcases.web.WebSummaryPageTest@1e5f4170]" started-at="2023-08-25T11:09:06 IST" name="test_instruction_procedure" data-provider="dp" finished-at="2023-08-25T11:09:27 IST" duration-ms="21467" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{created_procedure=Created Procedure01, created_instruction=Created Instruction01, created_test=Created Test01, searched_instruction=Drink boiled water, searched_procedure=ARTHROSCOPIC STABILISATION PROCEDURE, searched_test=Urine Acetone}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_instruction_procedure -->
+        <test-method signature="add_drugs(java.util.Hashtable)[pri:3, instance:com.demo.testcases.web.WebSummaryPageTest@1e5f4170]" started-at="2023-08-25T11:09:27 IST" name="add_drugs" data-provider="dp" finished-at="2023-08-25T11:09:27 IST" duration-ms="295" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{searched_drug=NAXDOM, popular_drug=COMBIFLAM}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- add_drugs -->
+        <test-method signature="add_new_drug(java.util.Hashtable)[pri:4, instance:com.demo.testcases.web.WebSummaryPageTest@1e5f4170]" started-at="2023-08-25T11:09:27 IST" name="add_new_drug" data-provider="dp" finished-at="2023-08-25T11:09:28 IST" duration-ms="221" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{new_drug_food_ralation=after, new_drug_night=frequency_n, new_drug_evening=frequency_e, new_drug_morning=frequency_m, new_drug_company=magical potions, new_drug_price=900, new_drug_duration=7.0, new_drug_sos=frequency_sos, new_drug_afternoon=frequency_a, new_drug_instructions=drink warm water, new_drug_name=wolfsbane, new_drug_strength=900, new_drug_duration_in=days, new_drug_formulation=tablet, new_drug_mode=oral}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- add_new_drug -->
+        <test-method signature="drugs_frequency(java.util.Hashtable)[pri:5, instance:com.demo.testcases.web.WebSummaryPageTest@1e5f4170]" started-at="2023-08-25T11:09:28 IST" name="drugs_frequency" data-provider="dp" finished-at="2023-08-25T11:09:28 IST" duration-ms="423" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{frequency_night=drug.frequency['N'], created_drug_frequency=7 days, frequency_afternoon=drug.frequency['A'], frequency_morning=drug.frequency['M'], searched_drug_frequency=2 weeks, frequency_evening=drug.frequency['E’], popular_drug_frequency=5 days}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- drugs_frequency -->
+        <test-method signature="add_cfd(java.util.Hashtable)[pri:6, instance:com.demo.testcases.web.WebSummaryPageTest@1e5f4170]" started-at="2023-08-25T11:09:28 IST" name="add_cfd" data-provider="dp" finished-at="2023-08-25T11:09:28 IST" duration-ms="241" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{popular_diagnosis=DENGUE FEVER – 1, searched_complaint=COLICKY PAIN IN ABDOMEN, searched_finding=OTHER FINDINGS, searched_diagnosis=HYPERTHYROIDISM}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- add_cfd -->
+        <test-method signature="saved_record(java.util.Hashtable)[pri:7, instance:com.demo.testcases.web.WebSummaryPageTest@1e5f4170]" started-at="2023-08-25T11:09:28 IST" name="saved_record" data-provider="dp" finished-at="2023-08-25T11:09:46 IST" duration-ms="17704" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{record_date=Aug 24, 2023}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saved_record -->
+        <test-method signature="verify_record_is_printed()[pri:8, instance:com.demo.testcases.web.WebSummaryPageTest@1e5f4170]" started-at="2023-08-25T11:09:46 IST" name="verify_record_is_printed" finished-at="2023-08-25T11:09:59 IST" duration-ms="12894" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_record_is_printed -->
+      </class> <!-- com.demo.testcases.web.WebSummaryPageTest -->
+      <class name="com.demo.testcases.web.WebHomePageTest">
+        <test-method signature="select_evening_slot()[pri:1, instance:com.demo.testcases.web.WebHomePageTest@2b62442c]" started-at="2023-08-25T11:04:49 IST" name="select_evening_slot" finished-at="2023-08-25T11:04:58 IST" duration-ms="9343" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- select_evening_slot -->
+        <test-method signature="appointment(java.util.Hashtable)[pri:2, instance:com.demo.testcases.web.WebHomePageTest@2b62442c]" started-at="2023-08-25T11:04:58 IST" name="appointment" description="Verify doctor&#039;s should be able to create appointment for the available appointment slot." data-provider="dp" finished-at="2023-08-25T11:05:56 IST" duration-ms="57309" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Patient_Age=35.0, Patient_Mobile=9034500777, Patient_Gender=Female, Patient_Name=Jan Levinson}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- appointment -->
+      </class> <!-- com.demo.testcases.web.WebHomePageTest -->
+      <class name="com.demo.testcases.web.WebCFDPageTest">
+        <test-method signature="appointment(java.util.Hashtable)[pri:1, instance:com.demo.testcases.web.WebCFDPageTest@66629f63]" started-at="2023-08-25T11:05:56 IST" name="appointment" data-provider="dp" finished-at="2023-08-25T11:06:01 IST" duration-ms="5348" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Patient_Age=35.0, Patient_Mobile=9034500777, Patient_Gender=Female, Patient_Name=Jan Levinson}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- appointment -->
+        <test-method signature="verify_20_popular_diagnosis()[pri:2, instance:com.demo.testcases.web.WebCFDPageTest@66629f63]" started-at="2023-08-25T11:06:01 IST" name="verify_20_popular_diagnosis" finished-at="2023-08-25T11:06:03 IST" duration-ms="2303" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_20_popular_diagnosis -->
+        <test-method signature="add_cfd(java.util.Hashtable)[pri:3, instance:com.demo.testcases.web.WebCFDPageTest@66629f63]" started-at="2023-08-25T11:06:03 IST" name="add_cfd" data-provider="dp" finished-at="2023-08-25T11:06:16 IST" duration-ms="13175" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{popular_diagnosis=DENGUE FEVER – 1, searched_complaint=COLICKY PAIN IN ABDOMEN, searched_finding=OTHER FINDINGS, searched_diagnosis=HYPERTHYROIDISM}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- add_cfd -->
+      </class> <!-- com.demo.testcases.web.WebCFDPageTest -->
+    </test> <!-- End To End Tests -->
+  </suite> <!-- Suite -->
+</testng-results>

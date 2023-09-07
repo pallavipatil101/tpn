@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.demo.setup.BaseSelenium;
 import com.demo.testcases.web.WebLoginTest;
@@ -17,7 +18,8 @@ public class Instructions extends BaseSelenium {
 	public WebDriver driver;
 	WebUtilities utilities = new WebUtilities();
 	Logger logger = Logger.getLogger(WebLoginTest.class);
-
+	String backgroundColor;
+	
 	public Instructions(WebDriver driver) {
 
 		this.driver = driver;
@@ -33,112 +35,89 @@ public class Instructions extends BaseSelenium {
 	@FindBy(name = "test_search")
 	private WebElement test_searchbox;
 	
-	@FindBy(xpath = "//div[@ng-click = 'vm.addTestToDirectory(vm.new_test)']")
-	private WebElement test_checkbox;
+	@FindBy(xpath = "//*[@class = 'icon-check-circle forestgreen']")
+	private WebElement new_test_inst_proc_checkbox;
 	
 	@FindBy(name = "procedure_search")
 	private WebElement procedure_searchbox;
-	
-	@FindBy(xpath = "//div[@ng-click = 'vm.addProcedureToDirectory(vm.new_procedure)']")
-	private WebElement procedure_checkbox;
-	
+		
 	@FindBy(name = "inst_search")
 	private WebElement instruction_searchbox;
 	
-	@FindBy(xpath = "//div[@ng-click = 'vm.addInstToDirectory(vm.new_inst)']")
-	private WebElement instruction_checkbox;
 	
-	public void search_test() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
-		utilities.sendkeys(searchbox, properties.getProperty("searched_test"));
+	public void search_test(String searchedTest) throws Exception {
+		utilities.sendkeys(searchbox, searchedTest);
 		Thread.sleep(3000);
 
 	}
 	
-	public void add_test() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
+	public void add_test(String searchedTest) throws Exception {
 		for(WebElement result : search_results)
 		{
 				try {
-					if(result.getText().contains(properties.getProperty("searched_test")))
+					if(result.getText().contains(searchedTest))
 					{
-						 Actions builder = new Actions(driver);
-					     builder.moveToElement(result).click(result);
-					     builder.perform();
-						
+						utilities.verify_true(result.getText().contains(searchedTest));
+						utilities.moveAndClick(result);
 					    break;
 					}
 				}
 				catch(org.openqa.selenium.StaleElementReferenceException ex)
 				{
 					try {
-						if(result.getText().contains(properties.getProperty("searched_test")))
+						if(result.getText().contains(searchedTest))
 						{
-							 Actions builder = new Actions(driver);
-						     builder.moveToElement(result).click(result);
-						     builder.perform();
-							
+							utilities.verify_true(result.getText().contains(searchedTest));
+							utilities.moveAndClick(result);
 						    break;
 						}
 					}
 					catch(org.openqa.selenium.StaleElementReferenceException e)
 					{
-						if(result.getText().contains(properties.getProperty("searched_test")))
+						if(result.getText().contains(searchedTest))
 						{
-							 Actions builder = new Actions(driver);
-						     builder.moveToElement(result).click(result);
-						     builder.perform();
-						     
+							utilities.verify_true(result.getText().contains(searchedTest));
+							utilities.moveAndClick(result);
 						    break;
-						}
-					}
+						}					}
 				}
 		}
 	}
 	
-	public void search_instruction() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
+	public void search_instruction(String searchedInstruction) throws Exception {
 		searchbox.clear();
-		utilities.sendkeys(searchbox, properties.getProperty("searched_instruction"));
+		utilities.sendkeys(searchbox, searchedInstruction);
 		Thread.sleep(3000);
 	}
 	
-	public void add_instruction() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
-
+	public void add_instruction(String searchedInstruction) throws Exception {
 		for(WebElement result : search_results)
 		{
-			String backgroundColor = result.getCssValue("background-color");
+			//backgroundColor = result.getCssValue("background-color");
 				try {
-					if(result.getText().contains(properties.getProperty("searched_instruction")))
+					if(result.getText().contains(searchedInstruction))
 					{
-						 Actions builder = new Actions(driver);
-					     builder.moveToElement(result).click(result);
-					     builder.perform();
-						
+						utilities.verify_true(result.getText().contains(searchedInstruction));
+						utilities.moveAndClick(result);
 					    break;
 					}
 				}
 				catch(org.openqa.selenium.StaleElementReferenceException ex)
 				{
 					try {
-						if(result.getText().contains(properties.getProperty("searched_instruction")))
+						if(result.getText().contains(searchedInstruction))
 						{
-							 Actions builder = new Actions(driver);
-						     builder.moveToElement(result).click(result);
-						     builder.perform();
-							
+							utilities.verify_true(result.getText().contains(searchedInstruction));
+							utilities.moveAndClick(result);
 						    break;
 						}
 					}
 					catch(org.openqa.selenium.StaleElementReferenceException e)
 					{
-						if(result.getText().contains(properties.getProperty("searched_instruction")))
+						if(result.getText().contains(searchedInstruction))
 						{
-							 Actions builder = new Actions(driver);
-						     builder.moveToElement(result).click(result);
-						     builder.perform();
-						     
+							utilities.verify_true(result.getText().contains(searchedInstruction));
+							utilities.moveAndClick(result);
 						    break;
 						}
 					}
@@ -146,50 +125,43 @@ public class Instructions extends BaseSelenium {
 		}
 	}
 	
-	public void search_procedure() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
+	public void search_procedure(String searchedProcedure) throws Exception {
 		searchbox.clear();
-		utilities.sendkeys(searchbox, properties.getProperty("searched_procedure"));
+		utilities.sendkeys(searchbox, searchedProcedure);
 		Thread.sleep(3000);
 	}
 	
-	public void add_procedure() throws Exception {
+	public void add_procedure(String searchedProcedure) throws Exception {
 		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
 
 		for(WebElement result : search_results)
 		{
-			String backgroundColor = result.getCssValue("background-color");
+			//backgroundColor = result.getCssValue("background-color");
 				try {
 
-					if(result.getText().contains(properties.getProperty("searched_procedure")))
+					if(result.getText().contains(searchedProcedure))
 					{
-						 Actions builder = new Actions(driver);
-					     builder.moveToElement(result).click(result);
-					     builder.perform();
-						
+						utilities.verify_true(result.getText().contains(searchedProcedure));
+						utilities.moveAndClick(result);
 					    break;
 					}
 				}
 				catch(org.openqa.selenium.StaleElementReferenceException ex)
 				{
 					try {
-						if(result.getText().contains(properties.getProperty("searched_procedure")))
+						if(result.getText().contains(searchedProcedure))
 						{
-							 Actions builder = new Actions(driver);
-						     builder.moveToElement(result).click(result);
-						     builder.perform();
-							
+							utilities.verify_true(result.getText().contains(searchedProcedure));
+							utilities.moveAndClick(result);
 						    break;
 						}
 					}
 					catch(org.openqa.selenium.StaleElementReferenceException e)
 					{
-						if(result.getText().contains(properties.getProperty("searched_procedure")))
+						if(result.getText().contains(searchedProcedure))
 						{
-							 Actions builder = new Actions(driver);
-						     builder.moveToElement(result).click(result);
-						     builder.perform();
-						     
+							utilities.verify_true(result.getText().contains(searchedProcedure));
+							utilities.moveAndClick(result);
 						    break;
 						}
 					}
@@ -197,22 +169,21 @@ public class Instructions extends BaseSelenium {
 		}
 	}
 	
-	public void create_new_test() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
-		utilities.sendkeys(test_searchbox, properties.getProperty("created_test"));
-		utilities.click(test_checkbox);
+	public void create_new_test(String createdTest) throws Exception {
+		utilities.sendkeys(test_searchbox, createdTest);
+		utilities.click(new_test_inst_proc_checkbox);
 	}
 	
-	public void create_new_instruction() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
-		utilities.sendkeys(instruction_searchbox, properties.getProperty("created_instruction"));
-		utilities.click(instruction_checkbox);
+	public void create_new_instruction(String createdInstruction) throws Exception {
+		utilities.sendkeys(instruction_searchbox, createdInstruction);
+		utilities.scroll_into_view(instruction_searchbox);
+		utilities.click(new_test_inst_proc_checkbox);
 	}
 	
-	public void create_new_procedure() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
-		utilities.sendkeys(procedure_searchbox, properties.getProperty("created_procedured"));
-		utilities.click(procedure_checkbox);
+	public void create_new_procedure(String createdProcedure) throws Exception {
+		utilities.sendkeys(procedure_searchbox, createdProcedure);
+		utilities.scroll_into_view(procedure_searchbox);
+		utilities.click(new_test_inst_proc_checkbox);
 	}
 	
 }

@@ -1,12 +1,9 @@
 package com.demo.actions.web;
 
-import java.io.FileInputStream;
-import java.time.Duration;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Properties;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,19 +11,17 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.demo.setup.BaseSelenium;
 import com.demo.testcases.web.WebLoginTest;
-import com.demo.utilities.ExcelUtils;
 import com.demo.utilities.WebUtilities;
 
 public class Prescription extends BaseSelenium {
 	public WebDriver driver;
 	WebUtilities utilities = new WebUtilities();
 	Logger logger = Logger.getLogger(WebLoginTest.class);
-
+	String newdrug;
 	public Prescription(WebDriver driver) {
 
 		this.driver = driver;
@@ -114,7 +109,7 @@ public class Prescription extends BaseSelenium {
 	@FindBy(xpath = "//*[@layout-align ='space-between center mt-5']/button[2]")
 	private WebElement new_drug_form_submit_btn_page3;
 	
-	@FindBy(xpath = "/html/body/md-toast")
+	@FindBy(xpath = "//div[@class='md-toast-content']/span")
 	private WebElement drug_already_added_msg;
 	
 	public void verify_20_popular_drugs() {
@@ -128,21 +123,18 @@ public class Prescription extends BaseSelenium {
 				count++;
 			}
 		}
-		Assert.assertTrue(count==20);
+		softAssert.assertTrue(count==20);
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>20 popular drug count: "+count);
 
 	}
 	
 	public void verify_popular_drugs_delete_icon() {
 		utilities.scroll_into_view(delete_all_drugs_icon);
-		Assert.assertTrue(delete_all_drugs_icon.isDisplayed());
+		utilities.verify_true(delete_all_drugs_icon.isDisplayed());
 		utilities.scroll_up();
 	}
 	
-	public void add_popular_drug() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
-		String popularDrug = properties.getProperty("popular_drug");
-		
+	public void add_popular_drug(String popularDrug) throws Exception {		
 		for(WebElement result : search_result_drugs)
 		{
 			Thread.sleep(3000);
@@ -172,29 +164,27 @@ public class Prescription extends BaseSelenium {
 		}
 	}
 	
-	public void verify_added_popular_drug() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
-		String popularDrug = properties.getProperty("popular_drug");
+	public void verify_added_popular_drug(String popularDrug) throws Exception {
 		for(WebElement added_drug : added_drugs_list)
 		{
-			Assert.assertTrue(added_drug.getText().contains(popularDrug));
+			utilities.verify_true(added_drug.getText().contains(popularDrug));
 
 		}
 	}
 	
-	public void verify_added_searched_drug() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
-		String searchedDrug = properties.getProperty("searched_drug");
-		for(WebElement added_drug : added_drugs_list)
+	public void verify_added_searched_drug(String searchedDrug) throws Exception {
+		for(int i = 0; i<added_drugs_list.size(); i++ )
 		{
-			logger.info("searched drug added:"+added_drug.getText());
-			//Assert.assertTrue(added_drug.getText().contains(searchedDrug));
+			while(i == 1)
+			{
+				utilities.verify_true(added_drugs_list.get(i).getText().contains(searchedDrug));
+		
+			}
 		}
 	}
 	
-	
 	public void verify_delete_icon_for_added_drug() {
-		Assert.assertTrue(delete_drugs_icon.isDisplayed());
+		utilities.verify_true(delete_drugs_icon.isDisplayed());
 
 	}
 	
@@ -206,17 +196,12 @@ public class Prescription extends BaseSelenium {
 		utilities.click(delete_all_drugs_icon);
 	}
 	
-	public void search_drugs() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
-		String searchedDrug = properties.getProperty("searched_drug");
+	public void search_drugs(String searchedDrug) throws Exception {
 		utilities.sendkeys(searchbox, searchedDrug);
 		Thread.sleep(3000);
 	}
 	
-	public void add_searched_drug() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
-		String searchedDrug = properties.getProperty("searched_drug");
-
+	public void add_searched_drug(String searchedDrug) throws Exception {
 		for(WebElement result : search_result_drugs)
 		{
 			utilities.explicitwait(result);
@@ -224,10 +209,8 @@ public class Prescription extends BaseSelenium {
 				try {
 					if(result.getText().contains(searchedDrug))
 					{
-						Assert.assertTrue(result.getText().contains(searchedDrug));
-						Actions builder = new Actions(driver);
-					    builder.moveToElement(result).click(result);
-					    builder.perform();
+						utilities.verify_true(result.getText().contains(searchedDrug));
+						utilities.moveAndClick(result);
 					    break;
 					}
 				}
@@ -236,10 +219,8 @@ public class Prescription extends BaseSelenium {
 					try {
 						if(result.getText().contains(searchedDrug))
 						{
-							Assert.assertTrue(result.getText().contains(searchedDrug));
-							Actions builder = new Actions(driver);
-						    builder.moveToElement(result).click(result);
-						    builder.perform();
+							utilities.verify_true(result.getText().contains(searchedDrug));
+							utilities.moveAndClick(result);
 						    break;
 						}
 					}
@@ -247,10 +228,8 @@ public class Prescription extends BaseSelenium {
 					{
 						if(result.getText().contains(searchedDrug))
 						{
-							Assert.assertTrue(result.getText().contains(searchedDrug));
-							Actions builder = new Actions(driver);
-						    builder.moveToElement(result).click(result);
-						    builder.perform();
+							utilities.verify_true(result.getText().contains(searchedDrug));
+							utilities.moveAndClick(result);
 						    break;
 						}
 					}
@@ -265,14 +244,7 @@ public class Prescription extends BaseSelenium {
 		Thread.sleep(3000);
 	}
 	
-	public void create_new_drug_details() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
-		String newdrugName = properties.getProperty("new_drug_name");
-		String newdrugCompany = properties.getProperty("new_drug_company");
-		String newdrugPrice = properties.getProperty("new_drug_price");
-		String newdrugMode = properties.getProperty("new_drug_mode");
-		String newdrugFormulation = properties.getProperty("new_drug_formulation");
-		
+	public void create_new_drug_details(String newdrugName, String newdrugCompany,String newdrugPrice, String newdrugMode, String newdrugFormulation  ) throws Exception {
 		utilities.sendkeys(new_drug_name, newdrugName);
 		utilities.sendkeys(new_drug_company_name, newdrugCompany);
 		utilities.sendkeys(new_drug_price, newdrugPrice);
@@ -299,9 +271,7 @@ public class Prescription extends BaseSelenium {
 		Thread.sleep(1000);
 	}
 	
-	public void create_new_drug_strength() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
-		String newdrugStrength = properties.getProperty("new_drug_strength");
+	public void create_new_drug_strength(String newdrugStrength) throws Exception {
 		utilities.sendkeys(new_drug_strength, newdrugStrength );
 		
 //		utilities.click(new_drug_strength_unit_dropdown_btn);
@@ -318,30 +288,24 @@ public class Prescription extends BaseSelenium {
 		action.moveToElement(new_drug_form_next_btn_page2).click().perform();
 	}
 	
-	public void create_new_drug_frequency() {
+	public void create_new_drug_frequency(String frequency1, String frequency2, String frequency3) {
 		for(WebElement drug_frequency : drug_frequency_checknboxes)
 		{
-			if(drug_frequency.getAttribute("name").equals("frequency_m")||drug_frequency.getAttribute("name").equals("frequency_e")||drug_frequency.getAttribute("name").equals("frequency_a"))
+			if(drug_frequency.getAttribute("name").equals(frequency1)||drug_frequency.getAttribute("name").equals(frequency2)||drug_frequency.getAttribute("name").equals(frequency3))
 			{
-				utilities.scroll_to_element(drug_frequency);
+				utilities.javascript_click(drug_frequency);
 			}
 		}
 	}
 	
-	public void create_new_drug_duration() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
-		String newdrugDuration = properties.getProperty("new_drug_duration");
-		String newdrugDurationype = properties.getProperty("new_drug_duration_in");
-		
+	public void create_new_drug_duration(String newdrugDuration,String newdrugDurationype) throws Exception {
 		utilities.sendkeys(drug_duration, newdrugDuration);
 		utilities.click(drug_duration_type_dropdown_btn);
 		Select select = new Select(drug_duration_type_dropdown_btn);
 		select.selectByVisibleText(newdrugDurationype);
 	}
 	
-	public void craete_new_drug_relation_with_food() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
-		String foodRelation = properties.getProperty("new_drug_food_relation");
+	public void craete_new_drug_relation_with_food(String foodRelation) throws Exception {
 		for(WebElement food_relation : food_relation_radios)
 		{
 			if(food_relation.getText().equalsIgnoreCase(foodRelation))
@@ -351,9 +315,7 @@ public class Prescription extends BaseSelenium {
 		}
 	}
 	
-	public void create_drug_instructions() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
-		String newDrugInstruction = properties.getProperty("new_drug_instructions");
+	public void create_drug_instructions(String newDrugInstruction) throws Exception {
 		utilities.sendkeys(drug_instruction_searchbox, newDrugInstruction);
 		for(WebElement instruction : drug_instruction_search_result)
 		{
@@ -368,9 +330,8 @@ public class Prescription extends BaseSelenium {
 		utilities.click(new_drug_form_submit_btn_page3);
 	}
 	
-	public void verify_created_drug_added() throws Exception {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
+	public void verify_created_drug_added(String newdrugName) throws Exception {
+		Thread.sleep(2000);
 		for(WebElement added_drug : added_drugs_list)
 		{
 			synchronized (added_drug) {
@@ -380,73 +341,55 @@ public class Prescription extends BaseSelenium {
 	                e.printStackTrace();
 	            }
 	        }
-			System.out.println(">>>>>>>>DRuG NAME ADDED GET TEXT: "+added_drug.getText());
-			ExcelUtils  data = new ExcelUtils (System.getProperty("user.dir") + "/src/test/java/com/demo/testdata/web/testdata.xlsx","Prescription");
-			String newdrugName = data.getCellDataasstring(1, 2);
-			Assert.assertTrue(added_drug.getText().contains(newdrugName));
+			Thread.sleep(3000);
+//			System.out.println(">>>>>>>>DRuG NAME ADDED GET TEXT: "+added_drug.getText());
+			
+			List<WebElement> drugList = driver.findElements(By.xpath("//*[@class='dropdown flex-100 border-0']/a/span"));
+			for(int i=0; i<drugList.size(); i++)
+			{
+				if(i==2)
+				{
+					utilities.verify_true(drugList.get(i).getText().contains(newdrugName));
+				}
+			}
 		}
 	}
 	
-	public void verify_created_drug_appears_in_search() throws Exception {
+	public void verify_created_drug_appears_in_search(String newdrugName) throws Exception {
 		searchbox.clear();
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
-		String newdrugName = properties.getProperty("new_drug_name");
 		utilities.sendkeys(searchbox, newdrugName);
+		Thread.sleep(4000);
 		for(WebElement result : search_result_drugs)
 		{
 				try 
 				{
-					Assert.assertTrue(result.getText().contains(newdrugName));
+					utilities.verify_true(result.getText().contains(newdrugName));
 						
 				}
 
 				catch(org.openqa.selenium.StaleElementReferenceException ex)
 				{
-					Assert.assertTrue(result.getText().contains(newdrugName));
+					utilities.verify_true(result.getText().contains(newdrugName));
 
 				}
 		}
+		
 	}
 	
-	public void verify_same_drug_cannot_be_added_twice() throws Exception {
-		properties = readPropertiesFile(System.getProperty("user.dir") + "/src/test/java/com/demo/properties/testdata.properties");
-		String newdrugName = properties.getProperty("new_drug_name");
+	public void verify_same_drug_cannot_be_added_twice(String newdrugName) throws Exception {
+		searchbox.clear();
 		utilities.sendkeys(searchbox, newdrugName);
-		for(WebElement result : search_result_drugs)
+		Thread.sleep(10000);
+		for(int i = 0; i<search_result_drugs.size(); i++)
 		{
-				try {
-					if(result.getText().equals(newdrugName))
-					{
-						Actions builder = new Actions(driver);
-					    builder.moveToElement(result).click(result);
-					    builder.perform();
-					    break;
-					}
-				}
-				catch(org.openqa.selenium.StaleElementReferenceException ex)
-				{
-					try {
-						if(result.getText().equals(newdrugName))
-						{
-							Actions builder = new Actions(driver);
-						    builder.moveToElement(result).click(result);
-						    builder.perform();
-						    break;
-						}
-					}
-					catch(org.openqa.selenium.StaleElementReferenceException e)
-					{
-						if(result.getText().equals(newdrugName))
-						{
-							Actions builder = new Actions(driver);
-						    builder.moveToElement(result).click(result);
-						    builder.perform();
-						    break;
-						}
-					}
-				}
+			if(search_result_drugs.get(i).getText().contains(newdrugName.toUpperCase()))
+			{
+				utilities.click(search_result_drugs.get(i));
+			    break;
+			}
+
+			utilities.verify_true(drug_already_added_msg.getText().contains("Drug already added"));	
 		}
-		
-		Assert.assertTrue(drug_already_added_msg.getText().contains("Drug already added"));
+	
 	}
 }

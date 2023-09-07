@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Suite" class="navigator-link">
+              <span class="suite-name border-failed">Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
+                    <span>AllTestClassesRunner.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Suite" class="navigator-link ">
+                    <span>1 group</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">22 methods, 1 failed,   21 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebPrescriptionPageTest" class="method navigator-link" hash-for-method="prescription_tab">prescription_tab</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebSummaryPageTest" class="method navigator-link" hash-for-method="add_cfd({popular_diagnosis=DENGUE FEVER – 1, searched_complaint=COLICKY PAIN IN ABDOMEN, searched_finding=OT...)">add_cfd({popular_diagnosis=DENGUE FEVER – 1, searched_complaint=COLICKY PAIN IN ABDOMEN, searched_finding=OT...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebCFDPageTest" class="method navigator-link" hash-for-method="add_cfd({popular_diagnosis=DENGUE FEVER – 1, searched_complaint=COLICKY PAIN IN ABDOMEN, searched_finding=OT...)">add_cfd({popular_diagnosis=DENGUE FEVER – 1, searched_complaint=COLICKY PAIN IN ABDOMEN, searched_finding=OT...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebSummaryPageTest" class="method navigator-link" hash-for-method="add_drugs({searched_drug=NAXDOM, popular_drug=COMBIFLAM})">add_drugs({searched_drug=NAXDOM, popular_drug=COMBIFLAM})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebPrescriptionPageTest" class="method navigator-link" hash-for-method="add_drugs({searched_drug=NAXDOM, popular_drug=COMBIFLAM})">add_drugs({searched_drug=NAXDOM, popular_drug=COMBIFLAM})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebPrescriptionPageTest" class="method navigator-link" hash-for-method="add_new_drug({new_drug_food_ralation=after, new_drug_night=frequency_n, new_drug_evening=frequency_e, new_drug_mo...)">add_new_drug({new_drug_food_ralation=after, new_drug_night=frequency_n, new_drug_evening=frequency_e, new_drug_mo...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebSummaryPageTest" class="method navigator-link" hash-for-method="add_new_drug({new_drug_food_ralation=after, new_drug_night=frequency_n, new_drug_evening=frequency_e, new_drug_mo...)">add_new_drug({new_drug_food_ralation=after, new_drug_night=frequency_n, new_drug_evening=frequency_e, new_drug_mo...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebCFDPageTest" class="method navigator-link" hash-for-method="appointment({Patient_Age=35.0, Patient_Mobile=9034500777, Patient_Gender=Female, Patient_Name=Jan Levinson})">appointment({Patient_Age=35.0, Patient_Mobile=9034500777, Patient_Gender=Female, Patient_Name=Jan Levinson})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebHomePageTest" class="method navigator-link" hash-for-method="appointment({Patient_Age=35.0, Patient_Mobile=9034500777, Patient_Gender=Female, Patient_Name=Jan Levinson})">appointment({Patient_Age=35.0, Patient_Mobile=9034500777, Patient_Gender=Female, Patient_Name=Jan Levinson})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebPrescriptionPageTest" class="method navigator-link" hash-for-method="delete_all_added_drugs">delete_all_added_drugs</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebSummaryPageTest" class="method navigator-link" hash-for-method="drugs_frequency({frequency_night=drug.frequency[&#039;N&#039;], created_drug_frequency=7 days, frequency_afternoon=drug.freque...)">drugs_frequency({frequency_night=drug.frequency['N'], created_drug_frequency=7 days, frequency_afternoon=drug.freque...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebInstructionsPageTest" class="method navigator-link" hash-for-method="instructions_tab">instructions_tab</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebLoginTest" class="method navigator-link" hash-for-method="login({Username=josh_doctor, Password=josh123})">login({Username=josh_doctor, Password=josh123})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebSummaryPageTest" class="method navigator-link" hash-for-method="saved_record({record_date=Aug 24, 2023})">saved_record({record_date=Aug 24, 2023})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebHomePageTest" class="method navigator-link" hash-for-method="select_evening_slot">select_evening_slot</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebSummaryPageTest" class="method navigator-link" hash-for-method="summary_tab">summary_tab</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebInstructionsPageTest" class="method navigator-link" hash-for-method="test_instruction_procedure({created_procedure=Created Procedure01, created_instruction=Created Instruction01, created_test=Crea...)">test_instruction_procedure({created_procedure=Created Procedure01, created_instruction=Created Instruction01, created_test=Crea...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebSummaryPageTest" class="method navigator-link" hash-for-method="test_instruction_procedure({created_procedure=Created Procedure01, created_instruction=Created Instruction01, created_test=Crea...)">test_instruction_procedure({created_procedure=Created Procedure01, created_instruction=Created Instruction01, created_test=Crea...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebCFDPageTest" class="method navigator-link" hash-for-method="verify_20_popular_diagnosis">verify_20_popular_diagnosis</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebPrescriptionPageTest" class="method navigator-link" hash-for-method="verify_20_popular_drugs">verify_20_popular_drugs</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebPrescriptionPageTest" class="method navigator-link" hash-for-method="verify_delete_icon_for_added_drugs">verify_delete_icon_for_added_drugs</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demo.testcases.web.WebSummaryPageTest" class="method navigator-link" hash-for-method="verify_record_is_printed">verify_record_is_printed</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.demo.testcases.web.WebPrescriptionPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="prescription_tab">
+                  </a> <!-- prescription_tab -->
+                  <span class="method-name">prescription_tab</span>
+                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=111.0.5563.64)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.11.0&apos;, revision: &apos;040bc5406b&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.14.0-1059-oem&apos;, java.version: &apos;11.0.20&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [644ba12522f6c6552aba541d8b842202, getElementText {id=1c3b66cc-fbe1-495f-bb40-01129fd4968a}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.64, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: /tmp/.com.google.Chrome.73xawP}, goog:chromeOptions: {debuggerAddress: localhost:34599}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:34599/devtoo..., se:cdpVersion: 111.0.5563.64, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on linux (644ba12522f6c6552aba541d8b842202)] -&gt; css selector: .nav.nav-tabs&gt;li]
+Session ID: 644ba12522f6c6552aba541d8b842202
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:192)
+	at com.demo.actions.web.CFDPage.open_prescription_tab(CFDPage.java:227)
+	at com.demo.testcases.web.WebPrescriptionPageTest.prescription_tab(WebPrescriptionPageTest.java:21)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.demo.testcases.web.WebSummaryPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="add_cfd({popular_diagnosis=DENGUE FEVER – 1, searched_complaint=COLICKY PAIN IN ABDOMEN, searched_finding=OT...)">
+                  </a> <!-- add_cfd({popular_diagnosis=DENGUE FEVER – 1, searched_complaint=COLICKY PAIN IN ABDOMEN, searched_finding=OT...) -->
+                  <span class="method-name">add_cfd</span>
+                  <span class="parameters">({popular_diagnosis=DENGUE FEVER – 1, searched_complaint=COLICKY PAIN IN ABDOMEN, searched_finding=OTHER FINDINGS, searched_diagnosis=HYPERTHYROIDISM})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="add_drugs({searched_drug=NAXDOM, popular_drug=COMBIFLAM})">
+                  </a> <!-- add_drugs({searched_drug=NAXDOM, popular_drug=COMBIFLAM}) -->
+                  <span class="method-name">add_drugs</span>
+                  <span class="parameters">({searched_drug=NAXDOM, popular_drug=COMBIFLAM})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="add_new_drug({new_drug_food_ralation=after, new_drug_night=frequency_n, new_drug_evening=frequency_e, new_drug_mo...)">
+                  </a> <!-- add_new_drug({new_drug_food_ralation=after, new_drug_night=frequency_n, new_drug_evening=frequency_e, new_drug_mo...) -->
+                  <span class="method-name">add_new_drug</span>
+                  <span class="parameters">({new_drug_food_ralation=after, new_drug_night=frequency_n, new_drug_evening=frequency_e, new_drug_morning=frequency_m, new_drug_company=magical potions, new_drug_price=900, new_drug_duration=7.0, new_drug_sos=frequency_sos, new_drug_afternoon=frequency_a, new_drug_instructions=drink warm water, new_drug_name=wolfsbane, new_drug_strength=900, new_drug_duration_in=days, new_drug_formulation=tablet, new_drug_mode=oral})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="drugs_frequency({frequency_night=drug.frequency[&#039;N&#039;], created_drug_frequency=7 days, frequency_afternoon=drug.freque...)">
+                  </a> <!-- drugs_frequency({frequency_night=drug.frequency['N'], created_drug_frequency=7 days, frequency_afternoon=drug.freque...) -->
+                  <span class="method-name">drugs_frequency</span>
+                  <span class="parameters">({frequency_night=drug.frequency['N'], created_drug_frequency=7 days, frequency_afternoon=drug.frequency['A'], frequency_morning=drug.frequency['M'], searched_drug_frequency=2 weeks, frequency_evening=drug.frequency['E’], popular_drug_frequency=5 days})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="saved_record({record_date=Aug 24, 2023})">
+                  </a> <!-- saved_record({record_date=Aug 24, 2023}) -->
+                  <span class="method-name">saved_record</span>
+                  <span class="parameters">({record_date=Aug 24, 2023})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="summary_tab">
+                  </a> <!-- summary_tab -->
+                  <span class="method-name">summary_tab</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_instruction_procedure({created_procedure=Created Procedure01, created_instruction=Created Instruction01, created_test=Crea...)">
+                  </a> <!-- test_instruction_procedure({created_procedure=Created Procedure01, created_instruction=Created Instruction01, created_test=Crea...) -->
+                  <span class="method-name">test_instruction_procedure</span>
+                  <span class="parameters">({created_procedure=Created Procedure01, created_instruction=Created Instruction01, created_test=Created Test01, searched_instruction=Drink boiled water, searched_procedure=ARTHROSCOPIC STABILISATION PROCEDURE, searched_test=Urine Acetone})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verify_record_is_printed">
+                  </a> <!-- verify_record_is_printed -->
+                  <span class="method-name">verify_record_is_printed</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.demo.testcases.web.WebHomePageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="appointment({Patient_Age=35.0, Patient_Mobile=9034500777, Patient_Gender=Female, Patient_Name=Jan Levinson})">
+                  </a> <!-- appointment({Patient_Age=35.0, Patient_Mobile=9034500777, Patient_Gender=Female, Patient_Name=Jan Levinson}) -->
+                  <span class="method-name">appointment</span>
+                  <span class="parameters">({Patient_Age=35.0, Patient_Mobile=9034500777, Patient_Gender=Female, Patient_Name=Jan Levinson})</span>
+                  <em>
+(Verify doctor's should be able to create appointment for the available appointment slot.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="select_evening_slot">
+                  </a> <!-- select_evening_slot -->
+                  <span class="method-name">select_evening_slot</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.demo.testcases.web.WebCFDPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="add_cfd({popular_diagnosis=DENGUE FEVER – 1, searched_complaint=COLICKY PAIN IN ABDOMEN, searched_finding=OT...)">
+                  </a> <!-- add_cfd({popular_diagnosis=DENGUE FEVER – 1, searched_complaint=COLICKY PAIN IN ABDOMEN, searched_finding=OT...) -->
+                  <span class="method-name">add_cfd</span>
+                  <span class="parameters">({popular_diagnosis=DENGUE FEVER – 1, searched_complaint=COLICKY PAIN IN ABDOMEN, searched_finding=OTHER FINDINGS, searched_diagnosis=HYPERTHYROIDISM})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="appointment({Patient_Age=35.0, Patient_Mobile=9034500777, Patient_Gender=Female, Patient_Name=Jan Levinson})">
+                  </a> <!-- appointment({Patient_Age=35.0, Patient_Mobile=9034500777, Patient_Gender=Female, Patient_Name=Jan Levinson}) -->
+                  <span class="method-name">appointment</span>
+                  <span class="parameters">({Patient_Age=35.0, Patient_Mobile=9034500777, Patient_Gender=Female, Patient_Name=Jan Levinson})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verify_20_popular_diagnosis">
+                  </a> <!-- verify_20_popular_diagnosis -->
+                  <span class="method-name">verify_20_popular_diagnosis</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.demo.testcases.web.WebPrescriptionPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="add_drugs({searched_drug=NAXDOM, popular_drug=COMBIFLAM})">
+                  </a> <!-- add_drugs({searched_drug=NAXDOM, popular_drug=COMBIFLAM}) -->
+                  <span class="method-name">add_drugs</span>
+                  <span class="parameters">({searched_drug=NAXDOM, popular_drug=COMBIFLAM})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="add_new_drug({new_drug_food_ralation=after, new_drug_night=frequency_n, new_drug_evening=frequency_e, new_drug_mo...)">
+                  </a> <!-- add_new_drug({new_drug_food_ralation=after, new_drug_night=frequency_n, new_drug_evening=frequency_e, new_drug_mo...) -->
+                  <span class="method-name">add_new_drug</span>
+                  <span class="parameters">({new_drug_food_ralation=after, new_drug_night=frequency_n, new_drug_evening=frequency_e, new_drug_morning=frequency_m, new_drug_company=magical potions, new_drug_price=900, new_drug_duration=7.0, new_drug_sos=frequency_sos, new_drug_afternoon=frequency_a, new_drug_instructions=drink warm water, new_drug_name=wolfsbane, new_drug_strength=900, new_drug_duration_in=days, new_drug_formulation=tablet, new_drug_mode=oral})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="delete_all_added_drugs">
+                  </a> <!-- delete_all_added_drugs -->
+                  <span class="method-name">delete_all_added_drugs</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verify_20_popular_drugs">
+                  </a> <!-- verify_20_popular_drugs -->
+                  <span class="method-name">verify_20_popular_drugs</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verify_delete_icon_for_added_drugs">
+                  </a> <!-- verify_delete_icon_for_added_drugs -->
+                  <span class="method-name">verify_delete_icon_for_added_drugs</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.demo.testcases.web.WebLoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="login({Username=josh_doctor, Password=josh123})">
+                  </a> <!-- login({Username=josh_doctor, Password=josh123}) -->
+                  <span class="method-name">login</span>
+                  <span class="parameters">({Username=josh_doctor, Password=josh123})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.demo.testcases.web.WebInstructionsPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="instructions_tab">
+                  </a> <!-- instructions_tab -->
+                  <span class="method-name">instructions_tab</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_instruction_procedure({created_procedure=Created Procedure01, created_instruction=Created Instruction01, created_test=Crea...)">
+                  </a> <!-- test_instruction_procedure({created_procedure=Created Procedure01, created_instruction=Created Instruction01, created_test=Crea...) -->
+                  <span class="method-name">test_instruction_procedure</span>
+                  <span class="parameters">({created_procedure=Created Procedure01, created_instruction=Created Instruction01, created_test=Created Test01, searched_instruction=Drink boiled water, searched_procedure=ARTHROSCOPIC STABILISATION PROCEDURE, searched_test=Urine Acetone})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+        </div> <!-- panel Suite -->
+        <div panel-name="test-xml-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">/home/josh/Repo/DemoProjectWeb/DemoProject/AllTestClassesRunner.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.demo.listeners.Listeners&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;End To End Tests&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.demo.testcases.web.WebLoginTest&quot;/&gt;
+      &lt;class name=&quot;com.demo.testcases.web.WebHomePageTest&quot;/&gt;
+      &lt;class name=&quot;com.demo.testcases.web.WebCFDPageTest&quot;/&gt;
+      &lt;class name=&quot;com.demo.testcases.web.WebPrescriptionPageTest&quot;/&gt;
+      &lt;class name=&quot;com.demo.testcases.web.WebInstructionsPageTest&quot;/&gt;
+      &lt;class name=&quot;com.demo.testcases.web.WebSummaryPageTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- End To End Tests --&gt;
+&lt;/suite&gt; &lt;!-- Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">End To End Tests (6 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">web</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">appointment</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">instructions_tab</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">login</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">prescription_tab</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">select_evening_slot</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">summary_tab</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Suite');
+function tableData_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(22);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'add_drugs')
+data.setCell(0, 2, 'com.demo.testcases.web.WebPrescriptionPageTest')
+data.setCell(0, 3, 64647);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'appointment')
+data.setCell(1, 2, 'com.demo.testcases.web.WebHomePageTest')
+data.setCell(1, 3, 57309);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'add_new_drug')
+data.setCell(2, 2, 'com.demo.testcases.web.WebPrescriptionPageTest')
+data.setCell(2, 3, 49510);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'summary_tab')
+data.setCell(3, 2, 'com.demo.testcases.web.WebSummaryPageTest')
+data.setCell(3, 3, 23520);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'test_instruction_procedure')
+data.setCell(4, 2, 'com.demo.testcases.web.WebSummaryPageTest')
+data.setCell(4, 3, 21467);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'saved_record')
+data.setCell(5, 2, 'com.demo.testcases.web.WebSummaryPageTest')
+data.setCell(5, 3, 17704);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'add_cfd')
+data.setCell(6, 2, 'com.demo.testcases.web.WebCFDPageTest')
+data.setCell(6, 3, 13175);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'verify_record_is_printed')
+data.setCell(7, 2, 'com.demo.testcases.web.WebSummaryPageTest')
+data.setCell(7, 3, 12894);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'prescription_tab')
+data.setCell(8, 2, 'com.demo.testcases.web.WebPrescriptionPageTest')
+data.setCell(8, 3, 12416);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'test_instruction_procedure')
+data.setCell(9, 2, 'com.demo.testcases.web.WebInstructionsPageTest')
+data.setCell(9, 3, 11972);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'select_evening_slot')
+data.setCell(10, 2, 'com.demo.testcases.web.WebHomePageTest')
+data.setCell(10, 3, 9343);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'login')
+data.setCell(11, 2, 'com.demo.testcases.web.WebLoginTest')
+data.setCell(11, 3, 7568);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'appointment')
+data.setCell(12, 2, 'com.demo.testcases.web.WebCFDPageTest')
+data.setCell(12, 3, 5348);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'instructions_tab')
+data.setCell(13, 2, 'com.demo.testcases.web.WebInstructionsPageTest')
+data.setCell(13, 3, 5253);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'verify_20_popular_diagnosis')
+data.setCell(14, 2, 'com.demo.testcases.web.WebCFDPageTest')
+data.setCell(14, 3, 2303);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'verify_20_popular_drugs')
+data.setCell(15, 2, 'com.demo.testcases.web.WebPrescriptionPageTest')
+data.setCell(15, 3, 1459);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'drugs_frequency')
+data.setCell(16, 2, 'com.demo.testcases.web.WebSummaryPageTest')
+data.setCell(16, 3, 423);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'add_drugs')
+data.setCell(17, 2, 'com.demo.testcases.web.WebSummaryPageTest')
+data.setCell(17, 3, 295);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'add_cfd')
+data.setCell(18, 2, 'com.demo.testcases.web.WebSummaryPageTest')
+data.setCell(18, 3, 241);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'add_new_drug')
+data.setCell(19, 2, 'com.demo.testcases.web.WebSummaryPageTest')
+data.setCell(19, 3, 221);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'delete_all_added_drugs')
+data.setCell(20, 2, 'com.demo.testcases.web.WebPrescriptionPageTest')
+data.setCell(20, 3, 110);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'verify_delete_icon_for_added_drugs')
+data.setCell(21, 2, 'com.demo.testcases.web.WebPrescriptionPageTest')
+data.setCell(21, 3, 44);
+window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 5 minutes</span>
+              <div id="times-div-Suite">
+              </div> <!-- times-div-Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">15 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.demo.testcases.web.WebSummaryPageTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">tearDown</span>
+                <br/>
+                <span class="ignored-method-name">webSetup</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.demo.testcases.web.WebHomePageTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">verify_disabled_slot</span>
+                <br/>
+                <span class="ignored-method-name">tearDown</span>
+                <br/>
+                <span class="ignored-method-name">webSetup</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.demo.testcases.web.WebCFDPageTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">tearDown</span>
+                <br/>
+                <span class="ignored-method-name">webSetup</span>
+                <br/>
+                <span class="ignored-method-name">delete_added_popular_diagnosis</span>
+                <br/>
+                <span class="ignored-method-name">diagnosis_tab_delete_cfd</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.demo.testcases.web.WebPrescriptionPageTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">webSetup</span>
+                <br/>
+                <span class="ignored-method-name">tearDown</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.demo.testcases.web.WebLoginTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">validate_error_message</span>
+                <br/>
+                <span class="ignored-method-name">Logout</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.demo.testcases.web.WebInstructionsPageTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">tearDown</span>
+                <br/>
+                <span class="ignored-method-name">webSetup</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.demo.testcases.web.WebLoginTest</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">webSetup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="test-method">
+                <span class="method-name">login({Username=josh_doctor, Password=josh123})</span>
+                <span class="method-start">7503 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.demo.testcases.web.WebHomePageTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">select_evening_slot</span>
+                <span class="method-start">15087 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">appointment({Patient_Age=35.0, Patient_Mobile=9034500777, Patient_Gender=Female, Patient_Name=Jan Levinson})</span>
+                <span class="method-start">24455 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.demo.testcases.web.WebCFDPageTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">appointment({Patient_Age=35.0, Patient_Mobile=9034500777, Patient_Gender=Female, Patient_Name=Jan Levinson})</span>
+                <span class="method-start">81769 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verify_20_popular_diagnosis</span>
+                <span class="method-start">87119 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">add_cfd({popular_diagnosis=DENGUE FEVER – 1, searched_complaint=COLICKY PAIN IN ABDOMEN, searched_finding=OT...)</span>
+                <span class="method-start">89427 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.demo.testcases.web.WebPrescriptionPageTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">prescription_tab</span>
+                <span class="method-start">102605 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verify_20_popular_drugs</span>
+                <span class="method-start">115264 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">add_drugs({searched_drug=NAXDOM, popular_drug=COMBIFLAM})</span>
+                <span class="method-start">116728 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">add_new_drug({new_drug_food_ralation=after, new_drug_night=frequency_n, new_drug_evening=frequency_e, new_drug_mo...)</span>
+                <span class="method-start">181384 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verify_delete_icon_for_added_drugs</span>
+                <span class="method-start">230895 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">delete_all_added_drugs</span>
+                <span class="method-start">230940 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.demo.testcases.web.WebInstructionsPageTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">instructions_tab</span>
+                <span class="method-start">231052 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_instruction_procedure({created_procedure=Created Procedure01, created_instruction=Created Instruction01, created_test=Crea...)</span>
+                <span class="method-start">236308 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.demo.testcases.web.WebSummaryPageTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">summary_tab</span>
+                <span class="method-start">248282 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_instruction_procedure({created_procedure=Created Procedure01, created_instruction=Created Instruction01, created_test=Crea...)</span>
+                <span class="method-start">271805 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">add_drugs({searched_drug=NAXDOM, popular_drug=COMBIFLAM})</span>
+                <span class="method-start">293275 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">add_new_drug({new_drug_food_ralation=after, new_drug_night=frequency_n, new_drug_evening=frequency_e, new_drug_mo...)</span>
+                <span class="method-start">293575 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">drugs_frequency({frequency_night=drug.frequency['N'], created_drug_frequency=7 days, frequency_afternoon=drug.freque...)</span>
+                <span class="method-start">293803 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">add_cfd({popular_diagnosis=DENGUE FEVER – 1, searched_complaint=COLICKY PAIN IN ABDOMEN, searched_finding=OT...)</span>
+                <span class="method-start">294229 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">saved_record({record_date=Aug 24, 2023})</span>
+                <span class="method-start">294473 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verify_record_is_printed</span>
+                <span class="method-start">312180 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.demo.testcases.web.WebLoginTest</div> <!-- chronological-class-name -->
+              <div class="configuration-suite after">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">tearDown</span>
+                <span class="method-start">325625 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>
